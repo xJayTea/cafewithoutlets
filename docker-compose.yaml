@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  cwo:
+    container_name: "cwo-frontend"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - './app:/cwo/app'
+    ports:
+      - "8080:8080"
+    environment:
+      - CHOKIDAR_USEPOLLING=true
